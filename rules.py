@@ -126,6 +126,8 @@ RULE_TEXT = {
           "(2/3, 1/3, 1/3) and (1/3, 2/3, 2/3)."),
 }
 
+"""
+Testing the ruling.
 
 if __name__ == "__main__":
     assert classify_crystal_system(5, 5, 5, 90, 90, 90) == "cubic"
@@ -144,3 +146,6 @@ if __name__ == "__main__":
     arr = np.array([0, 1, 2])
     assert is_allowed(arr, arr, arr, "P").shape == (3,)
     assert list(is_allowed(arr, 0 * arr, 0 * arr, "F")) == [True, False, True]
+
+    
+"""
