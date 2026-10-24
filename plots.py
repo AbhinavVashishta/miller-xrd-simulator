@@ -32,12 +32,12 @@ def structure_figure(crystal, hkl_list=(), all_planes=True, show_atoms=True):
         ys += [p[1], q[1], None]
         zs += [p[2], q[2], None]
     fig.add_trace(go.Scatter3d(x=xs, y=ys, z=zs, mode="lines", hoverinfo="skip",
-                               line=dict(color="#333333", width=4), showlegend=False))
+                               line=dict(color="#8a8f98", width=4), showlegend=False))
 
     # a, b, c labels just past the end of each axis
     tips = 1.08 * M
     fig.add_trace(go.Scatter3d(x=tips[:, 0], y=tips[:, 1], z=tips[:, 2], mode="text",
-                               text=["a", "b", "c"], textfont=dict(size=16, color="#333333"),
+                               text=["a", "b", "c"], textfont=dict(size=16, color="#8a8f98"),
                                hoverinfo="skip", showlegend=False))
 
     if show_atoms:
