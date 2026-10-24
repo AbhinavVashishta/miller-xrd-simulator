@@ -111,6 +111,7 @@ def build_crystal(cell, atoms, spacegroup="P 1", name=""):
     for atom in atoms:
         el, xyz = atom[0], np.array(atom[1:4], dtype=float)
         o = float(atom[4]) if len(atom) > 4 else 1.0
+        b = float(atom[5]) if len(atom) > 5 else 0.0
         images = []
         for op in ops:
             p = np.round(np.array(op.apply_to_xyz(list(xyz))), 6) % 1.0
@@ -121,8 +122,9 @@ def build_crystal(cell, atoms, spacegroup="P 1", name=""):
             elements.append(el)
             frac.append(p)
             occ.append(o)
+            biso.append(b)
     return Crystal(cell=tuple(cell), elements=elements, frac=np.array(frac),
-                   occ=np.array(occ), biso=np.zeros(len(elements)),
+                   occ=np.array(occ), biso=np.array(biso),
                    spacegroup=sg.hm, name=name)
 
 
